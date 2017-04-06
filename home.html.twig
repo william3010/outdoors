@@ -1,0 +1,252 @@
+{% extends 'AppBundle:Layouts:layout.html.twig' %}
+{% block pagestyle %}
+    <link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+    <link href="{{ asset('plugins/videojs/video.css') }}" rel="stylesheet">
+{% endblock pagestyle %}
+{% block StyleSheet %}
+    <link href="{{ asset('css/layout.css') }}" rel="stylesheet">
+{% endblock StyleSheet %}
+{% block PageContent %}
+
+<!-- BEGIN PAGE CONTENT -->
+<div class="page-content">
+    {{ form_start(form, {'method': 'post'}) }}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="item m-b-30">
+
+                    <div class="item-textarea">
+                        {{ form_widget(form.texte, { 'attr': {'class': 'form-control form-white autosize','placeholder': 'ecris quelque chose', 'rows':'5'} }) }}
+                    </div>
+                    <div class="item-footer clearfix">
+                        <div class="footer-actions pull-left">
+                            <i class="icon-rounded-marker"></i>
+                            <i class="icon-rounded-camera"></i>
+                            <i class="icon-rounded-paperclip-oblique"></i>
+                            <i class="icon-rounded-alarm-clock"></i>
+                        </div>
+
+                        <input type="submit" class="pull-right btn btn-primary btn-square" value="publier">
+                    </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+
+            <!-- BEGIN TIMELINE CONTENT -->
+            <div class="timeline-btn-day"> <i class="icon-custom-left"></i>
+                <button type="button" class="btn btn-primary f-16"><strong>Tomorrow</strong></button>
+            </div>
+            <section id="timeline">
+
+
+
+
+
+                <div class="timeline-block">
+                    <div class="timeline-icon bg-dark">
+                        <img class="img-timeline" src="{{ asset('images/profil_page/pics3.jpg') }}"  alt="">
+                    </div>
+
+                    <div class="timeline-content bounce-in">
+                        <div class="timeline-heading clearfix">
+                            <h2 class="pull-left"><strong>Location</strong> of t event</h2>
+                            <div class="pull-right">
+                                <div class="pull-left">
+                                    <div class="timeline-day-number">6</div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="timeline-day">tuesday</div>
+                                    <div class="timeline-month c-gray">March 2015</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+                        <div class="col-map">
+                            <div class="map" id="timeline-map"></div>
+                        </div>
+                        <div class="more">
+                            <div class="row">
+                                <div class="col-sm-4 like">
+                                    <i class="fa fa-heart"></i> Like
+                                </div>
+                                <div class="col-sm-4 more-comments">
+                                    <div class="comment-number">
+                                        <i class="icon-bubble"></i> Comments <span class="pull-right badge badge-dark">3</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 more-share">
+                                    <i class="icon-share"></i> Share
+                                </div>
+                            </div>
+                            <div class="row comments">
+                                <div class="col-sm-12">
+                                    <ul>
+                                        <li class="clearfix">
+                                  <span class="pull-left">
+                                  <img src="{{ asset('images/profil_page/friend5.jpg') }}" alt="friend 1">
+                                  </span>
+                                            <div class="clearfix">
+                                                <div class="info">
+                                                    <div class="name"><strong class="primary-font">Anna Martin</strong></div>
+                                                    <div class="date">12 mins ago</div>
+                                                </div>
+                                                <p>
+                                                    Wow! Looks great!
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="clearfix">
+                                  <span class="pull-left">
+                                  <img src="{{ asset('images/profil_page/friend6.jpg') }}" alt="friend 2">
+                                  </span>
+                                            <div class="clearfix">
+                                                <div class="info">
+                                                    <div class="name"><strong class="primary-font">John Smith</strong></div>
+                                                    <div class="date">12 mins ago</div>
+                                                </div>
+                                                <p>
+                                                    Hey! What's up here? Give me a call soon.
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row share">
+                                <div class="share-facebook">
+                                    <i class="fa fa-facebook"></i>
+                                </div>
+                                <div class="share-twitter">
+                                    <i class="fa fa-twitter"></i>
+                                </div>
+                                <div class="share-google">
+                                    <i class="fa fa-google-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-block">
+                    <div class="timeline-icon  bg-yellow">
+                        <i class="icon-pointer"></i>
+                    </div>
+                    <div class="timeline-content bounce-in">
+                        <div class="timeline-heading clearfix">
+                            <h2 class="pull-left"><strong>Location</strong> of next event</h2>
+                            <div class="pull-right">
+                                <div class="pull-left">
+                                    <div class="timeline-day-number">6</div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="timeline-day">tuesday</div>
+                                    <div class="timeline-month c-gray">March 2015</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+                        <div class="col-map">
+                            <div class="map" id="timeline-map"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-block">
+                    <div class="timeline-icon  bg-yellow">
+                        <i class="icon-pointer"></i>
+                    </div>
+                    <div class="timeline-content bounce-in">
+                        <div class="timeline-heading clearfix">
+                            <h2 class="pull-left"><strong>Location</strong> of next event</h2>
+                            <div class="pull-right">
+                                <div class="pull-left">
+                                    <div class="timeline-day-number">6</div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="timeline-day">tuesday</div>
+                                    <div class="timeline-month c-gray">March 2015</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+                        <div class="col-map">
+                            <div class="map" id="timeline-map"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-block">
+                    <div class="timeline-icon bg-purple">
+                        <i class="icon-calendar"></i>
+                    </div>
+                    <div class="timeline-content bounce-in ">
+                        <div class="timeline-heading clearfix">
+                            <h2 class="pull-left"><strong>Calendar</strong> reminder</h2>
+                            <div class="pull-right">
+                                <div class="pull-left">
+                                    <div class="timeline-day-number">01</div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="timeline-day">thursday</div>
+                                    <div class="timeline-month c-gray">April 2014</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Meet John and his collaborators at Central Perk at 6pm. Don't forget to bring project illustrations and quotation.</p>
+                        <a href="#" class="btn btn-white btn-embossed read-more">Cancel</a>
+                        <a href="#" class="btn btn-default btn-embossed read-more">Confirm</a>
+                    </div>
+                </div>
+                <div class="timeline-block">
+                    <div class="timeline-icon bg-dark">
+                        <i class="icon-pencil"></i>
+                    </div>
+                    <div class="timeline-content bounce-in">
+                        <div class="timeline-heading clearfix">
+                            <h2 class="pull-left"><strong>Article</strong> Extract</h2>
+                            <div class="pull-right">
+                                <div class="pull-left">
+                                    <div class="timeline-day-number">7</div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="timeline-day">wednesday</div>
+                                    <div class="timeline-month c-gray">March 2015</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="article-extract">
+                            <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.
+                            <i class="fa fa-quote-right"></i>
+                        </p>
+                        <a href="#" class="btn btn-default btn-embossed read-more">Read more</a>
+                    </div>
+                </div>
+            </section>
+            <!-- END TIMELINE CONTENT -->
+        </div>
+    </div>
+    <div class="footer">
+        <div class="copyright">
+            <p class="pull-left sm-pull-reset">
+                <span>Copyright <span class="copyright">©</span> 2015 </span>
+                <span>THEMES LAB</span>.
+                <span>All rights reserved. </span>
+            </p>
+            <p class="pull-right sm-pull-reset">
+                <span><a href="#" class="m-r-10">Support</a> | <a href="#" class="m-l-10 m-r-10">Terms of use</a> | <a href="#" class="m-l-10">Privacy Policy</a></span>
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock PageContent %}
+{% block JavaScript %}
+    <script src="{{ asset('js/pages/timeline.js') }}"></script>
+    <script src="{{ asset('plugins/videojs/video.js') }}"></script>
+    <script src="{{ asset('js/pages/profil.js') }}"></script>
+    <script src="{{ asset('js/layout.js') }}"></script>
+    <script src="{{ asset('plugins/google-maps/gmaps.min.js') }}"></script>
+    <script src="//maps.google.com/maps/api/js?sensor=true"></script>
+{% endblock JavaScript %}
